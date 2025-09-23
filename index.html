@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pablo Neira — Estratega Digital</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Menú superior -->
+  <nav class="navbar">
+    <div class="navbar-logo">Pablo Neira</div>
+    <button class="navbar-toggle" aria-label="Abrir menú" onclick="document.querySelector('.navbar-links').classList.toggle('open')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="navbar-links">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+  <!-- Hero -->
+  <header class="hero">
+  <h1>Impulsa tú negocio <span class="highlight">digital</span></h1>
+    <p><strong>Marketing Digital</strong> y <strong>Embudos de Venta</strong> para empresas y emprendedores que quieren crecer, automatizar y vender más.</p>
+    <ul class="hero-tags">
+     <!-- <li><span>Estrategia Digital</span></li>
+      <li><span>Embudos de Venta</span></li>
+      <li><span>Publicidad Online</span></li>
+      <li><span>Automatización</span></li>
+    </ul>-->
+    <a href="#contacto" class="btn">Solicita asesoría</a>
+  </header>
+
+  <!-- Sobre mí -->
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p><strong>Ayudo a empresas y emprendedores</strong> a diseñar estrategias digitales y embudos de venta que convierten más y mejor.</p>
+  <ul class="skills">
+      <li>Embudos de Venta</li>
+      <li>Publicidad Digital</li>
+      <li>Automatización</li>
+      <li>Estrategia de Contenido</li>
+    </ul>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Estrategia Digital</h3>
+        <p>Defino objetivos claros y un roadmap para tu crecimiento online.</p>
+      </div>
+      <div class="card">
+        <h3>Embudos de Venta</h3>
+        <p>Diseño y optimizo procesos que convierten leads en clientes.</p>
+      </div>
+      <div class="card">
+        <h3>Automatización</h3>
+        <p>Implemento sistemas que ahorran tiempo y aumentan eficiencia.</p>
+      </div>
+      <div class="card">
+        <h3>Publicidad Online</h3>
+        <p>Campañas efectivas en Google, Meta y más para atraer clientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form action="mailto:juanpabloneira3@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+    <p style="margin-top:24px; font-weight:700; color:var(--green);">¡Respondo en menos de 24h!</p>
+  <a href="mailto:juanpabloneira3@gmail.com" class="btn" style="margin-top:16px; display:inline-block;">Enviar email</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pablo Neira. Todos los derechos reservados.</p>
+    <div style="margin-top:12px; display:flex; justify-content:center; gap:24px;">
+      <a href="https://instagram.com/juanpabloneira3" target="_blank" aria-label="Instagram" style="color:var(--green);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#fff"/><path d="M12 8.5A3.5 3.5 0 1 0 12 15.5A3.5 3.5 0 1 0 12 8.5Z" stroke="#35dd75" stroke-width="1.5"/><rect x="3" y="3" width="18" height="18" rx="5" stroke="#35dd75" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#35dd75"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/juanpabloneira3" target="_blank" aria-label="LinkedIn" style="color:var(--green);">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#fff"/><path d="M7 8V17" stroke="#35dd75" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="6" r="1" fill="#35dd75"/><path d="M10 12V17M10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12V17M17 17V12C17 9.79086 15.2091 8 13 8C10.7909 8 9 9.79086 9 12V17" stroke="#35dd75" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

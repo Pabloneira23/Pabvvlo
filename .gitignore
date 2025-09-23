@@ -1,0 +1,6 @@
+# Ignorar archivos temporales y de sistema
+.DS_Store
+node_modules/
+*.log
+.env
+.vscode/
