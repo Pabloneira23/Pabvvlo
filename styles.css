@@ -22,36 +22,46 @@ body {
 
 /* NAVBAR */
 .navbar {
-  width: 100vw;
-  max-width: 100vw;
-  background: var(--white);
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  padding: 18px 40px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.03);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  justify-content: center;
+  width: 100%;
+  max-width: 100vw;
   box-sizing: border-box;
-  overflow-x: hidden;
+  padding: 18px 0;
+  padding-left: 32px; /* Añadir espacio en la margen izquierda de la barra superior en versión web */
 }
 .navbar-logo {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 32px;
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--black);
   letter-spacing: -1px;
 }
+.navbar-logo img {
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.navbar-logo span {
+  margin-left: 0;
+  padding-left: 0;
+  vertical-align: middle;
+}
 .navbar-links {
+  flex: 1 1 auto;
   display: flex;
   gap: 32px;
   list-style: none;
   margin: 0;
   padding: 0;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 100vw;
-  box-sizing: border-box;
-  overflow-x: hidden;
 }
 .navbar-links a {
   text-decoration: none;
@@ -87,6 +97,17 @@ body {
   border-radius: 2px;
   transition: 0.3s;
 }
+@media (max-width: 700px) {
+  .navbar {
+    padding: 14px 16px;
+    padding-left: 16px; /* Ajustar margen izquierdo en versión móvil */
+    justify-content: space-between;
+  }
+  .navbar-links {
+    margin: 0;
+    justify-content: flex-start;
+  }
+}
 
 /* HERO */
 .hero {
@@ -97,7 +118,7 @@ body {
   align-items: center;
   padding: 64px 32px 32px 32px;
   background: var(--white);
-  margin-bottom: 48px;
+  margin-bottom: 64px;
   padding-top: 100px;
   padding-bottom: 80px;
   box-sizing: border-box;
@@ -129,26 +150,59 @@ body {
   border: 1px solid var(--border);
 }
 @media (max-width: 700px) {
-  .hero h1 {
-    font-size: 2.1rem;
-    line-height: normal;
-    margin-bottom: 16px;
-  }
-  .hero p {
-    font-size: 1rem;
-    line-height: normal;
-    margin-bottom: 16px;
-    max-width: 500px;
+  .navbar {
+    padding-bottom: 32px;
   }
   .hero {
-    padding-top: 48px;
-    padding-bottom: 32px;
+    padding-top: 120px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .hero h1, .hero p {
+    text-align: left;
+    width: 100%;
+    max-width: 95vw;
+  }
+  .hero .btn {
+    display: block;
+    margin: 24px auto 0 auto;
+    text-align: center;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 98px;
+    padding-bottom: 64px;
+    margin-bottom: 40px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--gray);
+    text-align: center;
+  }
+  .hero p {
+    font-size: 1.15rem;
+    line-height: 1.5;
     margin-bottom: 32px;
+    max-width: 95vw;
+    color: var(--gray);
+    text-align: center;
   }
   .btn {
     font-size: 1.1rem;
     padding: 16px 32px;
     border-radius: 8px;
+    margin-top: 12px;
   }
 }
 
@@ -286,6 +340,40 @@ footer {
 }
 
 @media (max-width: 700px) {
+  .hero {
+    padding-top: 98px;
+    padding-bottom: 64px;
+    margin-bottom: 40px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--gray);
+    text-align: center;
+  }
+  .hero p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    max-width: 95vw;
+    color: var(--gray);
+    text-align: center;
+  }
+  .btn {
+    font-size: 1.1rem;
+    padding: 16px 32px;
+    border-radius: 8px;
+    margin-top: 12px;
+  }
   section {
     padding: 24px 4vw;
     max-width: 100vw;
@@ -341,6 +429,35 @@ footer {
   }
   .navbar-toggle {
     display: flex;
+  }
+}
+
+/* Centrar más las secciones en versión web */
+@media (min-width: 701px) {
+  section {
+    padding-left: 56px;
+    padding-right: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+  }
+}
+
+/* Quitar centrado de la sección contacto en versión web */
+@media (min-width: 701px) {
+  #contacto {
+    display: block;
+    text-align: left;
+    align-items: unset;
+    justify-content: unset;
+  }
+  #contacto form {
+    align-items: unset;
+    margin: unset;
+  }
+  #contacto a {
+    margin-left: unset;
+    margin-right: unset;
   }
 }
 
