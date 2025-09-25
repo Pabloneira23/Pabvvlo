@@ -23,7 +23,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="author" content="Pablo Neira">
   <link rel="canonical" href="https://pabloneira.com/">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="icon_rayo" href="/recursos/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body style="max-width:100vw; overflow-x:hidden;">
@@ -32,21 +32,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   <!-- Menú superior -->
-  <nav class="navbar">
-    <div class="navbar-logo" style="cursor:pointer; display:inline-flex; align-items:center; gap:8px;" tabindex="0" aria-label="Inicio Pablo Neira" onclick="window.location.href='index.html'" onkeypress="if(event.key==='Enter'){window.location.href='index.html';}">
-      <img src="/recursos/favicon.svg" alt="Logo Pablo Neira" class="logo-icon" style="height:1.5em; width:1.5em; vertical-align:middle; margin-right:0;">
-  <span style="font-weight:700; font-size:1.15em; color:#222; letter-spacing:-1px;">Pablo Neira </span>
+  <nav class="navbar" role="navigation" aria-label="Menú principal">
+    <div class="navbar-logo" style="cursor:pointer; display:inline-flex; align-items:center; gap:4px;" tabindex="0" aria-label="Inicio Pablo Neira" onclick="location.reload()" onkeypress="if(event.key==='Enter'){location.reload();}">
+      <img src="favicon.svg" alt="Icono rayo verde, inicio" class="logo-icon" style="height:1.5em;vertical-align:middle;margin-right:4px;">
+      <span>Pablo Neira</span>
     </div>
-    <button class="navbar-toggle" aria-label="Abrir menú" onclick="document.querySelector('.navbar-links').classList.toggle('open')">
+    <button class="navbar-toggle" aria-label="Abrir menú" aria-controls="navbar-links" aria-expanded="false" onclick="const nav=document.querySelector('.navbar-links');nav.classList.toggle('open');this.setAttribute('aria-expanded',nav.classList.contains('open'))">
       <span></span>
       <span></span>
       <span></span>
     </button>
-  <ul class="navbar-links" style="margin:0 auto; display:flex; justify-content:center; align-items:center; width:100%; max-width:520px;">
-      <li><a href="#sobre-mi">Sobre mí</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-  <li><a href="#contacto">Contacto</a></li>
-  <li><a href="blog.html">Blog</a></li>
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="#sobre-mi" tabindex="0">Sobre mí</a></li>
+      <li><a href="#servicios" tabindex="0">Servicios</a></li>
+      <li><a href="#contacto" tabindex="0">Contacto</a></li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
   </nav>
   <!-- Hero -->
@@ -94,10 +94,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p style="margin-top:18px; font-size:1.05em; color:#222;">Visita el <a href="blog.html" class="btn-minimal" style="margin-left:4px;">Blog</a> para artículos y recursos exclusivos.</p>
   </section>
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
+  <section id="sobre-mi" aria-labelledby="sobre-mi-titulo">
+    <h2 id="sobre-mi-titulo">Sobre mí</h2>
     <p><strong>Ayudo a empresas y emprendedores</strong> a diseñar estrategias digitales y embudos de venta que convierten más y mejor.</p>
-  <ul class="skills">
+    <ul class="skills" aria-label="Habilidades principales">
       <li>Embudos de Venta</li>
       <li>Publicidad Digital</li>
       <li>Automatización</li>
@@ -106,36 +106,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- Servicios -->
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <div class="cards">
-      <div class="card">
+  <section id="servicios" aria-labelledby="servicios-titulo">
+    <h2 id="servicios-titulo">Servicios</h2>
+    <div class="cards" role="list" aria-label="Servicios ofrecidos">
+      <div class="card" role="listitem">
         <h3>Estrategia Digital</h3>
         <p>Defino objetivos claros y un roadmap para tu crecimiento online.</p>
       </div>
-      <div class="card">
+      <div class="card" role="listitem">
         <h3>Embudos de Venta</h3>
         <p>Diseño y optimizo procesos que convierten leads en clientes.</p>
       </div>
-      <div class="card">
+      <div class="card" role="listitem">
         <h3>Automatización</h3>
         <p>Implemento sistemas que ahorran tiempo y aumentan eficiencia.</p>
       </div>
-      <div class="card">
-        <h3>Anuncios</h3>
+      <div class="card" role="listitem">
+        <h3>Publicidad Online</h3>
         <p>Campañas efectivas en Google, Meta y más para atraer clientes.</p>
       </div>
     </div>
   </section>
 
   <!-- Contacto -->
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <form action="mailto:juanpabloneira3@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo" required>
-      <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
-      <button type="submit" class="btn">Enviar</button>
+  <section id="contacto" aria-labelledby="contacto-titulo">
+    <h2 id="contacto-titulo">Contacto</h2>
+    <form action="mailto:juanpabloneira3@gmail.com" method="POST" enctype="text/plain" aria-label="Formulario de contacto">
+      <input type="text" name="name" placeholder="Tu nombre" required aria-required="true" aria-label="Nombre">
+      <input type="email" name="email" placeholder="Tu correo" required aria-required="true" aria-label="Correo electrónico">
+      <textarea name="mensaje" placeholder="Escribe tu mensaje..." required aria-required="true" aria-label="Mensaje"></textarea>
+      <button type="submit" class="btn" aria-label="Enviar mensaje">Enviar</button>
     </form>
     <a href="https://wa.me/34613179940" target="_blank" aria-label="Contactar por WhatsApp" style="margin-top:16px; display:inline-flex; align-items:center; gap:8px; text-decoration:none; border:none; background:none;">
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" role="img" aria-label="WhatsApp">
@@ -145,15 +145,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
   </section>
 
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 Pablo Neira. Todos los derechos reservados.</p>
     <div style="margin-top:12px; display:flex; justify-content:center; gap:24px;">
       <a href="https://instagram.com/juanpabloneira3" target="_blank" aria-label="Instagram" style="color:var(--green);">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#fff"/><path d="M12 8.5A3.5 3.5 0 1 0 12 15.5A3.5 3.5 0 1 0 12 8.5Z" stroke="#35dd75" stroke-width="1.5"/><rect x="3" y="3" width="18" height="18" rx="5" stroke="#35dd75" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#35dd75"/></svg>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Instagram"><rect width="24" height="24" rx="6" fill="#fff"/><path d="M12 8.5A3.5 3.5 0 1 0 12 15.5A3.5 3.5 0 1 0 12 8.5Z" stroke="#35dd75" stroke-width="1.5"/><rect x="3" y="3" width="18" height="18" rx="5" stroke="#35dd75" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#35dd75"/></svg>
       </a>
-      <a href="https://linkedin.com/in/juanpabloneira3" target="_blank" aria-label="LinkedIn" style="color:var(--green);">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#fff"/><path d="M7 8V17" stroke="#35dd75" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="6" r="1" fill="#35dd75"/><path d="M10 12V17M10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12V17M17 17V12C17 9.79086 15.2091 8 13 8C10.7909 8 9 9.79086 9 12V17" stroke="#35dd75" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <a href="https://www.linkedin.com/in/juan-pablo-neira-8989852aa" target="_blank" aria-label="LinkedIn" style="color:var(--green);">
+        <svg width="28" height="28" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;" role="img" aria-label="LinkedIn">
+          <circle cx="16" cy="16" r="16" fill="#fff"/>
+          <path d="M10.5 13.5h3v9h-3v-9zm1.5-2a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4 2h2.8v1.3h.04c.39-.74 1.34-1.52 2.76-1.52 2.95 0 3.5 1.94 3.5 4.47v5.75h-3v-5.1c0-1.22-.02-2.8-1.7-2.8-1.7 0-2 1.33-2 2.7v5.2h-3v-9z" fill="#35dd75"/>
+        </svg>
       </a>
+    </div>
+    <div style="margin-top:18px; display:flex; justify-content:center; gap:18px; font-size:0.95rem; flex-wrap:wrap;">
+      <a href="#aviso-legal" style="color:var(--gray);text-decoration:underline;">Aviso legal</a>
+      <a href="#privacidad" style="color:var(--gray);text-decoration:underline;">Política de privacidad</a>
+      <a href="#terminos" style="color:var(--gray);text-decoration:underline;">Términos de uso</a>
     </div>
   </footer>
 </body>
